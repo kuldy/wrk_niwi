@@ -14,7 +14,7 @@ const RefFirstUseCase = () => {
 
   return (
     <>
-      {console.log("component is re-rendering")}
+      {/* {console.log("component is re-rendering")} */}
       <br />
       <div>First Use Case: Page re-rendered {countRef.current} times</div>
 
