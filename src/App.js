@@ -1,5 +1,16 @@
 import React from "react";
 import Star from "./components/Star";
+import { GrStatusGood } from "react-icons/gr";
+import { BsCheckCircleFill } from "react-icons/bs";
+
+const points = [
+  "personal diet counsellor counselling",
+  "diet chart based on your food preferences",
+  "six 1-on-1 video counselling sessions per month",
+  "upto 2 whatsapp queries per day",
+  "and much more!",
+];
+
 function App() {
   const handleSubmit = () => {
     console.log("submitted");
@@ -92,7 +103,7 @@ function App() {
             <img
               src="https://cdn.pixabay.com/photo/2015/10/05/07/42/fig-972271__340.jpg"
               alt="food"
-              className="object-cover rounded-full w-56 h-56 shadow-sm"
+              className="object-cover rounded-full w-52 h-52 shadow-sm"
             />
           </div>
           <div className="ml-16 text-4xl font-semibold">
@@ -100,7 +111,7 @@ function App() {
           </div>
         </div>
         {/* fifth row */}
-        <div className="grid grid-cols-2 gap-4 ml-48 mt-12">
+        <div className="grid grid-cols-2 gap-4 ml-48 mt-12 relative">
           <div className="aspect-w-4 aspect-h-3 shadow-md w-2/3 mx-auto">
             <iframe
               className="rounded-lg shadow-md"
@@ -113,15 +124,23 @@ function App() {
           </div>
           <div>
             <ul>
-              <li>personal diet counsellor counselling</li>
-              <li>diet chart based on your food preferences</li>
-              <li>six 1-on-1 video counselling sessions per month</li>
-              <li>upto 2 whatsapp queries per day</li>
-              <li>and much more!</li>
+              {points.map((point) => (
+                <li className="flex mb-6">
+                  <BsCheckCircleFill className="h-8 w-8 text-red-600" />
+                  <span className="ml-4 text-xl"> {point}</span>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>image in absolute form</div>
+          <div className="absolute -bottom-24 -right-12">
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/07/42/fig-972271__340.jpg"
+              alt="food"
+              className="object-cover rounded-full w-52 h-52 shadow-sm"
+            />
+          </div>
         </div>
+        {/* row six */}
         <div>payment details</div>
         <div>choose plan that's right for you</div>
         <div>what are our clients saying?</div>
