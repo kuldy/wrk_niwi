@@ -2,6 +2,7 @@ import React from "react";
 import Star from "./components/Star";
 import { GrStatusGood } from "react-icons/gr";
 import { BsCheckCircleFill } from "react-icons/bs";
+import PaymentDetailsForm from "./components/PaymentDetailsForm";
 
 const points = [
   "personal diet counsellor counselling",
@@ -125,7 +126,7 @@ function App() {
           <div>
             <ul>
               {points.map((point) => (
-                <li className="flex mb-6">
+                <li key={point} className="flex mb-6">
                   <BsCheckCircleFill className="h-8 w-8 text-red-600" />
                   <span className="ml-4 text-xl"> {point}</span>
                 </li>
@@ -141,7 +142,8 @@ function App() {
           </div>
         </div>
         {/* row six */}
-        <div>payment details</div>
+        <PaymentDetailsForm />
+
         <div>choose plan that's right for you</div>
         <div>what are our clients saying?</div>
         <div>request a call back from an expert dietitian today!</div>
